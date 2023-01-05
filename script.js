@@ -5,7 +5,6 @@ let fullname = document.getElementsByClassName("fullname");
 let username = document.getElementsByClassName("username");
 let email = document.getElementById('email');
 let btn = document.getElementById('btn');
-let skillBtn = document.getElementById('skill-btn');
 let nationality = document.getElementById("nationality");
 let age = document.getElementById("age");
 let address = document.getElementById("address");
