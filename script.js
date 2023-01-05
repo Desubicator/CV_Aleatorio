@@ -58,16 +58,10 @@ function printError (error){
 
 skillBtn.addEventListener("click", function randomSkills() {
   let skillLevel = Math.floor(Math.random() * 5) + 1;
-
   let skill = Array.from(document.getElementsByClassName("skill"));
-  skill.forEach(element => {
-    let empty = Array.from(document.getElementsByClassName("empty"));
 
-    for (let i = 0; i < skillLevel; i++) {
-      empty.className = "full";
-    }
-
-  });
-
-});
+  for (let i = 0; i < skill.length; i++) {
+    console.log(skill[i]);
+    
+  } });
 
