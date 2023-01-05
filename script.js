@@ -69,9 +69,9 @@ function randomSkills() {
   let skill = document.getElementsByClassName("skill");
 
   for (let i = 0; i < skill.length; i++) {
-    let skillLevel = Math.floor(Math.random() * 5) + 1;
+    let skillLevel = Math.floor(Math.random() * 5 + 1) ;
     let item = skill[i];
-    let temp = item.querySelectorAll(":scope > span");
+    let temp = Array.from(item.querySelectorAll(":scope > span"));
 
     for (let j = 0; j < skillLevel; j++) {
       temp[j].classList.add("full");
