@@ -82,3 +82,44 @@ function randomSkills() {
       temp[j].classList.add("full");
     }}}
 
+
+  
+  // Genera nodos de expeeriencia aleatorios.
+
+  function randNum() {
+      return Math.floor(Math.random() * 9 + 2) ;
+  }
+
+  function randCompany() {
+    let list = [ "Apple","Microsoft","Amazon","Alphabet (Google)","Facebook","Intel","IBM","Oracle","Samsung","HP","Dell","Cisco", "AMD",
+    "Nvidia","Xerox","Hewlett Packard Enterprise","Lenovo","Acer","Asus","Huawei","LG","ZTE","Toshiba","VMWare","SAP","Siemens",
+    "HTC","Nokia","Ericsson","Palo Alto Networks","Symantec","Trend Micro","Check Point","Fortinet","Akamai","Cisco Systems",]
+
+    let randIndex = Math.floor(Math.random() * 36);
+
+    result = list[randIndex]
+    return result
+  }
+
+  function randJob() {
+    let jobList = [ "Software Developer","Web Developer","Mobile Developer","DevOps Engineer","Data Scientist","Data Engineer","Machine Learning Engineer","Software Tester","Technical Writer",
+    "Technical Project Manager","Technical Support Engineer","Information Security Engineer","Cloud Solutions Architect","DevOps Architect","Data Architect",
+    "Software Architect","Technical Sales Engineer","Product Manager","UX Designer","Graphic Designer","UI Designer","Tech Writer","Technical Editor",
+    "Technical Lead","Technical Recruiter","Tech Support Representative","Tech Support Manager","Technical Trainer","Technical Consultant",
+    "Technical Marketing Manager","Technical Account Manager","Technical Support Technician","Technical Support Specialist","Technical Support Analyst"]
+
+    let randIndex = Math.floor(Math.random() * 34);
+
+    result = jobList[randIndex]
+    return result
+  }
+
+  function populateNodes(){
+    let trabajo = document.getElementsByClassName("trabajo");
+    let nodos =  document.getElementsByClassName("nodo");
+    for(let i = 0; i < trabajo.length; i++){
+      let job = randJob();
+      nodos[i].innerHTML = "Tengo " + randNum() + " años de experiencia en " + randCompany() + ". Donde me desempeñaba como " + job + ".";
+      trabajo[i].innerHTML = job;
+    }
+  }
