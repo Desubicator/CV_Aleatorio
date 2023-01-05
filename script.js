@@ -17,6 +17,8 @@ btn.addEventListener("click", function() {
     .then(updateProfile)
     .then(reset)
     .then(randomSkills)
+    .then(populateNodes)
+    .then(populateCourses)
     .catch(printError)
 });
 
@@ -121,5 +123,32 @@ function randomSkills() {
       let job = randJob();
       nodos[i].innerHTML = "Tengo " + randNum() + " años de experiencia en " + randCompany() + ". Donde me desempeñaba como " + job + ".";
       trabajo[i].innerHTML = job;
+    }
+  }
+
+  // Genera nodos de formacion academica aleatorios.
+
+  function randCourse(){
+    let courses = ["Introducción a la Informática","Introducción a JavaScript","JavaScript para principiantes","Fundamentos de JavaScript",
+    "Técnicas avanzadas de JavaScript","Programación orientada a objetos con JavaScript","Estructuras de datos y algoritmos con JavaScript",
+    "Desarrollo Web con JavaScript y Node.js","Desarrollo Web Full Stack con JavaScript","Desarrollo de aplicaciones móviles con JavaScript y React Native",
+    "Introducción a Python","Python Avanzado","Desarrollo web con HTML, CSS y JavaScript","Frameworks de JavaScript: Angular, React y Vue",
+    "Bibliotecas JavaScript: jQuery y Lodash","Estructuras de datos y algoritmos en JavaScript", "Introducción a la ciencia de datos",
+    "Aprendizaje automático con Python", "Visualización de datos con D3.js","Desarrollo web de pila completa con MERN","Desarrollo de aplicaciones móviles con React Native"]
+
+    let randIndex = Math.floor(Math.random() * 21);
+
+    result = courses[randIndex]
+    return result
+  }
+
+  function populateCourses(){
+    let formacion = document.getElementsByClassName("formacion");
+    let nodoEst =  document.getElementsByClassName("nodoEst");
+    for(let i = 0; i < formacion.length; i++){
+      let curso = randCourse();
+      let duracion = Math.floor(Math.random() * 24 + 1);
+      nodoEst[i].innerHTML = "Me forme con el programa académico de " + curso + " de una duración de " + duracion + " meses.";
+      formacion[i].innerHTML = curso;
     }
   }
