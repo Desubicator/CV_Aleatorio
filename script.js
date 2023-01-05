@@ -5,6 +5,7 @@ let fullname = document.getElementsByClassName("fullname");
 let username = document.getElementsByClassName("username");
 let email = document.getElementById('email');
 let btn = document.getElementById('btn');
+let skillBtn = document.getElementById('skill-btn');
 let nationality = document.getElementById("nationality");
 let age = document.getElementById("age");
 let address = document.getElementById("address");
@@ -52,3 +53,21 @@ function updateProfile (profile){
 function printError (error){
   console.log(error);
 }
+
+// Habilidades Aleatorias
+
+skillBtn.addEventListener("click", function randomSkills() {
+  let skillLevel = Math.floor(Math.random() * 5) + 1;
+
+  let skill = Array.from(document.getElementsByClassName("skill"));
+  skill.forEach(element => {
+    let empty = Array.from(document.getElementsByClassName("empty"));
+
+    for (let i = 0; i < skillLevel; i++) {
+      empty.className = "full";
+    }
+
+  });
+
+});
+
