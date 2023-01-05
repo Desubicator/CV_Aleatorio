@@ -93,7 +93,9 @@ html{
   cursor: pointer;
   display: block;
   position: fixed;
-  width: 10%;
+  top: 0;
+  right: 0;
+  width: 20%;
   font-size: 1.5rem;
   line-height: 100%;
   margin: 0;
