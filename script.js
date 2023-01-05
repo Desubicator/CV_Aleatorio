@@ -32,6 +32,8 @@ function parseJSON (res){
   return res.json();
 }
 
+// Funcion para generar nuevo perfil usando la API de random user y actualizando el html.
+
 function updateProfile (profile){
   avatar.src = profile.results[0].picture.large;
    
@@ -55,6 +57,9 @@ function printError (error){
   console.log(error);
 }
 
+
+// Borra las habilidades guardadas previamente.
+
 function reset() {
   let full = document.querySelectorAll(".full")
   for (let i = 0; i < full.length; i++) {
@@ -62,7 +67,7 @@ function reset() {
   }
 }
 
-// Habilidades Aleatorias
+// Habilidades Aleatorias, genera puntuaciones para las diversas habilidades, entre 1 a 5 y cambia las clases de los spans para marcarlo.
 
 function randomSkills() {
 
@@ -71,7 +76,7 @@ function randomSkills() {
   for (let i = 0; i < skill.length; i++) {
     let skillLevel = Math.floor(Math.random() * 5 + 1) ;
     let item = skill[i];
-    let temp = Array.from(item.querySelectorAll(":scope > span"));
+    let temp = Array.from(item.querySelectorAll(":scope > span")).reverse();
 
     for (let j = 0; j < skillLevel; j++) {
       temp[j].classList.add("full");
