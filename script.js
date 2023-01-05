@@ -16,6 +16,8 @@ btn.addEventListener("click", function() {
     .then(handleErrors)
     .then(parseJSON)
     .then(updateProfile)
+    .then(reset)
+    .then(randomSkills)
     .catch(printError)
 });
 
@@ -54,14 +56,25 @@ function printError (error){
   console.log(error);
 }
 
+function reset() {
+  let full = document.querySelectorAll(".full")
+  for (let i = 0; i < full.length; i++) {
+    full[i].classList.remove("full"); 
+  }
+}
+
 // Habilidades Aleatorias
 
-skillBtn.addEventListener("click", function randomSkills() {
-  let skillLevel = Math.floor(Math.random() * 5) + 1;
-  let skill = Array.from(document.getElementsByClassName("skill"));
+function randomSkills() {
+
+  let skill = document.getElementsByClassName("skill");
 
   for (let i = 0; i < skill.length; i++) {
-    console.log(skill[i]);
-    
-  } });
+    let skillLevel = Math.floor(Math.random() * 5) + 1;
+    let item = skill[i];
+    let temp = item.querySelectorAll(":scope > span");
+
+    for (let j = 0; j < skillLevel; j++) {
+      temp[j].classList.add("full");
+    }}}
 
