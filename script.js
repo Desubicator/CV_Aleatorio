@@ -95,7 +95,7 @@ function randomSkills() {
   function randCompany() {
     let list = [ "Apple","Microsoft","Amazon","Alphabet (Google)","Facebook","Intel","IBM","Oracle","Samsung","HP","Dell","Cisco", "AMD",
     "Nvidia","Xerox","Hewlett Packard Enterprise","Lenovo","Acer","Asus","Huawei","LG","ZTE","Toshiba","VMWare","SAP","Siemens",
-    "HTC","Nokia","Ericsson","Palo Alto Networks","Symantec","Trend Micro","Check Point","Fortinet","Akamai","Cisco Systems",]
+    "HTC","Nokia","Ericsson","Palo Alto Networks","Symantec","Trend Micro","Check Point","Fortinet","Akamai","Cisco Systems"]
 
     let randIndex = Math.floor(Math.random() * 36);
 
@@ -147,7 +147,7 @@ function randomSkills() {
     let nodoEst =  document.getElementsByClassName("nodoEst");
     for(let i = 0; i < formacion.length; i++){
       let curso = randCourse();
-      let duracion = Math.floor(Math.random() * 24 + 1);
+      let duracion = Math.floor(Math.random() * 23 + 2);
       nodoEst[i].innerHTML = "Me forme con el programa académico de " + curso + " de una duración de " + duracion + " meses.";
       formacion[i].innerHTML = curso;
     }
