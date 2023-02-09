@@ -10,6 +10,18 @@ let age = document.getElementById("age");
 let address = document.getElementById("address");
 let phone = document.getElementById("phone");
 
+window.addEventListener("load", function() {
+  fetch(url)
+  .then(handleErrors)
+  .then(parseJSON)
+  .then(updateProfile)
+  .then(reset)
+  .then(randomSkills)
+  .then(populateNodes)
+  .then(populateCourses)
+  .catch(printError)
+});
+
 btn.addEventListener("click", function() {
   fetch(url)
     .then(handleErrors)
