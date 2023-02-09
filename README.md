@@ -1,6 +1,6 @@
 # CV_Aleatorio
 Una aplicación web que genera perfiles de CV aleatorios utilizando la API de usuario aleatorio. (https://randomuser.me/).<br>
-La web esta alojada en Github Pages aqui: https://desubicator.github.io/CV_Aleatorio/
+La web esta alojada en Github Pages, y puede acceder desde aqui: https://desubicator.github.io/CV_Aleatorio/
 
 ## Cómo funciona:
 Haga clic en el botón "Nuevo perfil" o actualice la página para obtener datos de la API.
